@@ -4,7 +4,7 @@ import { Pasajero } from './entities/pasajero.entity';
 
 @Injectable()
 export class PasajerosService {
-  pasajeros: Pasajero[] = [];
+  private pasajeros: Pasajero[] = [];
 
   constructor(){};
 
