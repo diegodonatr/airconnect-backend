@@ -1,5 +1,5 @@
 export class CreateAeropuertoDto {
-    nombre: string;
-    codigo: string;
-    ciudad: string;
+    public nombre: string;
+    public codigo: string;
+    public ciudad: string;
 }

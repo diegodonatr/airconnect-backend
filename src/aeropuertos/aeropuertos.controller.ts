@@ -2,24 +2,23 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { AeropuertosService } from './aeropuertos.service';
 import { CreateAeropuertoDto } from './dto/create-aeropuerto.dto';
 import { UpdateAeropuertoDto } from './dto/update-aeropuerto.dto';
-import { Aeropuerto } from './entities/aeropuerto.entity';
 
 @Controller('aeropuertos')
 export class AeropuertosController {
   constructor(private readonly aeropuertosService: AeropuertosService) {}
 
   @Post()
-  create(@Body() createAeropuertoDto: CreateAeropuertoDto): Aeropuerto {
+  create(@Body() createAeropuertoDto: CreateAeropuertoDto) {
     return this.aeropuertosService.crearAeropuerto(createAeropuertoDto);
   }
 
   @Get()
-  findAll(): Aeropuerto[] {
+  findAll() {
     return this.aeropuertosService.getTodosLosAeropuertos();
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string): Aeropuerto | undefined {
+  findOne(@Param('id') id: string) {
     return this.aeropuertosService.getAeropuertoById(+id);
   }
 }

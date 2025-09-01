@@ -5,7 +5,7 @@ import { Aeropuerto } from './entities/aeropuerto.entity';
 
 @Injectable()
 export class AeropuertosService {
-  aeropuertos: Aeropuerto[] = [];
+  private aeropuertos: Aeropuerto[] = [];
 
   constructor(){};
 
@@ -36,6 +36,16 @@ export class AeropuertosService {
     // Si no existe, retornar error
     if (!aeropuertoEncontrado){
       throw new NotFoundException(`No se encontró el aeropuerto con id ${id}.`)
+    }
+    return aeropuertoEncontrado;
+  }
+
+  getAeropuertoByCodigo(codigoAeropuerto: string): Aeropuerto | undefined {
+    // Buscar el aeropuerto según el código
+    const aeropuertoEncontrado: Aeropuerto | undefined = this.aeropuertos.find((aeropuerto) => aeropuerto.codigo === codigoAeropuerto);
+    // Si no existe, retornar error
+    if (!aeropuertoEncontrado){
+      throw new NotFoundException(`No se encontró el aeropuerto con el código ${codigoAeropuerto}.`)
     }
     return aeropuertoEncontrado;
   }

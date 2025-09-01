@@ -1,5 +1,5 @@
 export class CreatePasajeroDto {
-    nombre: string;
-    apellido: string;
-    email: string;
+    public nombre: string;
+    public apellido: string;
+    public email: string;
 }
