@@ -3,7 +3,6 @@ import { VuelosService } from './vuelos.service';
 import { CreateVueloDto } from './dto/create-vuelo.dto';
 import { UpdateVueloDto } from './dto/update-vuelo.dto';
 import { Vuelo } from './entities/vuelo.entity';
-import { Aeropuerto } from 'src/aeropuertos/entities/aeropuerto.entity';
 
 @Controller('vuelos')
 export class VuelosController {
