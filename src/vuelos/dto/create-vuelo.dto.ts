@@ -1,8 +1,8 @@
 export class CreateVueloDto {
-    numeroVuelo: string;
-    fechaSalida: Date;
-    duracionEstimada: number;
-    origen: string;
-    destino: string;
-    estado: string;
+    public numeroVuelo: string;
+    public fechaSalida: Date;
+    public duracionEstimada: number;
+    public origen: string;
+    public destino: string;
+    public estado: string;
 }
