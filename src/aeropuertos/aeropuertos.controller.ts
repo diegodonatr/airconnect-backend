@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { AeropuertosService } from './aeropuertos.service';
 import { CreateAeropuertoDto } from './dto/create-aeropuerto.dto';
-import { UpdateAeropuertoDto } from './dto/update-aeropuerto.dto';
+import { ApiParam } from '@nestjs/swagger';
 
 @Controller('aeropuertos')
 export class AeropuertosController {
@@ -18,6 +18,7 @@ export class AeropuertosController {
   }
 
   @Get(':id')
+  @ApiParam({name: 'id', type: Number, description: 'id interno del Aeropuerto'})
   findOne(@Param('id') id: string) {
     return this.aeropuertosService.getAeropuertoById(+id);
   }
