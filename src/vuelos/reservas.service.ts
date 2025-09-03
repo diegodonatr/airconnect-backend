@@ -39,7 +39,7 @@ export class ReservasService {
         // Buscar reserva por id, si no lo encuentra, retornar error 400
         const reservaBuscada: Reserva | undefined = this.reservas.find((reserva) => reserva.id === id)
         if (!reservaBuscada) {
-        throw new BadRequestException(`No hay ninguna reserva con el id ${id}`)
+        throw new NotFoundException(`No hay ninguna reserva con el id ${id}`)
         }
         return reservaBuscada;
     }
